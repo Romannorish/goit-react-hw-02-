@@ -30,11 +30,7 @@ export default function App() {
   };
   const total = totalFeedback();
 
-  const [positiveFeedbacks, setpositiveFeedbacks] = useState(0);
-
-  useEffect(() => {
-    setpositiveFeedbacks(Math.round(((feedback.good + feedback.neutral) / total) * 100));
-  }, [feedback.good, feedback.neutral, total]);
+  const positiveFeedbacks = Math.round(((feedback.good + feedback.neutral) / total) * 100);
 
   const resetFeedback = () => {
     setFeedback({
